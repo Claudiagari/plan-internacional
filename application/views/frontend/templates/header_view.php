@@ -6,7 +6,15 @@
 	<p><?php echo $message['content']; ?></p>
 	</div>
 	<?php endif; ?>
-
+	<div>
+	<img src="https://uneteaplanperu.org.pe/uploads/1553281177.png" alt="unete-logo" class="hd-logo">
+	</div>
+	<ul class="lista-header">
+		<li><a class="menu-link scrollLink" href="#tipodedonaciones">ACERCA DE PLAN</a></li>
+		<li><a class="menu-link scrollLink" href="#contactanos">TIPO DE DONACIONES</a></li>
+		<li><a class="menu-link scrollLink" href="#foooter">CONTÁCTANOS</a></li>
+		<li><a class="menu-link scrollLink" href="#donaryserparte"><img src="<?php echo base_url(); ?>uploads/donar.png" class="btn-donar"></a></li>
+	</ul>
 	<div id="menu-container">
 		<div id="menu-wrapper">
 			<div id="hamburger-menu">
