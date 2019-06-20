@@ -173,9 +173,6 @@ header{
 	z-index: 2;
 	position: fixed;
     width: 100%;
-    display:flex;
-    align-items:center;
-    justify-content: space-around;
     background: #0073d2;
     font-family: "Veneer", Arial, Tahoma, sans-serif; 
   }
@@ -194,11 +191,10 @@ header.large {
   transition: all 0.3s ease-in-out 0s;
  
 }
-header.large ul{
-    display: flex;
-}
+
 header.small ul{
-    display: flex; 
+    display: flex;
+     
 }
 header.large .logotipo {
   width: 80px;
@@ -206,7 +202,7 @@ header.large .logotipo {
 }
 
 header.small {
-  height: 107px;
+  /*height: 107px;*/
   transition: all 0.3s ease-in-out 0s;
   top: 0;
   background-image: url(../img/line.jpg);
@@ -239,7 +235,7 @@ header.small .datos-cabecera li a i{
   height: 22px;
 }
 header .lista-header a {
-   font-size: 25px;
+   font-size: 20px;
    padding: 0 20px; 
    color:#ffffff;
 }
@@ -249,6 +245,29 @@ header img.hd-logo{
 .btn-donar{
     max-width: 50%;;
 }
+.header-web {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.ct-logo{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.ct-donar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.header-web ul {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    padding: 0;
+    width: 60%;
+}
+
 /***********BANNER********/
 
 .fluid_container {
@@ -1157,11 +1176,7 @@ footer strong{
 }
 /****************MENU*********************/
 /*https://codepen.io/slyka85/pen/LbXYKQ*/
-@media(max-width:768px){
-    #menu-wrapper {
-        display: block;
-    } 
-}
+
 #menu-wrapper {
     overflow: hidden;
     max-width: 60px;
@@ -1347,4 +1362,43 @@ li.lin-sep hr{
 .img_banner1 {
     display: none;
 
+}
+@media(max-width:1112px){
+    .header-web ul {
+      width: 100%;
+    }
+}
+@media(max-width:768px){
+    #menu-wrapper {
+        display: block;
+    }
+   ul.lista-header {
+       display: none;
+   } 
+   header {
+       display: flex;
+       align-items: center;
+   }
+   header.small ul {
+    display: none;
+}
+header img.hd-logo {
+    max-width: 80%;
+}
+.btn-donar {
+    max-width: 50%;
+}
+}
+@media(max-width:520px){
+    header img.hd-logo {
+        max-width: 100%;
+    }
+    .btn-donar {
+        max-width: 70%;
+    }
+ }
+ @media (max-width: 320px){
+.btn-donar {
+    max-width: 100%;
+}
 }
