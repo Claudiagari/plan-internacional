@@ -1,71 +1,79 @@
 <?php $this->load->view("frontend/templates/head_view"); ?>
-<body>
-	<?php $message = $this->session->flashdata('message'); ?>
+    <body>
+<?php $message = $this->session->flashdata('message'); ?>
 
-	<?php $this->load->view("frontend/templates/header_view"); ?>
-	<style type="text/css">
-		@media only screen and (max-width: 991px) {
-			.cont-video {
-				background-image:url(<?php echo base_url(); ?>uploads/<?php echo $campania['fondo_video_responsive']; ?>) !important;
-			}
+<?php $this->load->view("frontend/templates/header_view"); ?>
+    <style type="text/css">
+        @media only screen and (max-width: 991px) {
+            .cont-video {
+                background-image: url(<?php echo base_url(); ?>uploads/<?php echo $campania['fondo_video_responsive']; ?>) !important;
+            }
 
-			.ctn-estad {
-				background-image:url(<?php echo base_url(); ?>uploads/<?php echo $campania['fondo_estadisticas_responsive']; ?>) !important;
-			}
-		}
+            .ctn-estad {
+                background-image: url(<?php echo base_url(); ?>uploads/<?php echo $campania['fondo_estadisticas_responsive']; ?>) !important;
+            }
+        }
 
-		<?php if(@$message['type'] == 'success'): ?>
-			@media screen and (max-width: 1920px) {
-				.img-ninas3 {
-					padding-bottom:590px;
-				}
-			}
-		<?php endif; ?>
+        <?php if(@$message['type'] == 'success'): ?>
+        @media screen and (max-width: 1920px) {
+            .img-ninas3 {
+                padding-bottom: 590px;
+            }
+        }
 
-	</style>
-	
-	<?php if(isset($banners) AND count($banners) > 0): ?>
-	<div class="fluid_container clearfix" id="acercade">
-	    <div class="camera_wrap camera_emboss" id="camera_wrap_4">
-	    	<?php foreach($banners as $key => $value): ?>
-	        <div data-thumb="<?php echo base_url(); ?>uploads/100x100/<?php echo $value['imagen_fondo']; ?>" data-src="<?php echo base_url();?>uploads/<?php echo $value['imagen_fondo']; ?>">
-	        	<div class="container cont-rsp">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 reset-total">
-	                        <div class="contenedor-texto">
-	                    		<div class="col-xs-12 col-sm-12 col-md-12 img_banner1 reset-total">
-	                    			<img src="<?php echo base_url(); ?>uploads/<?php echo $value['logo']; ?>" title="<?php echo $campania['titulo']; ?>" alt="<?php echo $campania['titulo']; ?>" />
-	                    		</div>	  
-	                    		<div class="col-xs-12 col-sm-12 col-md-<?php echo ($value['imagen_derecha'] != '') ? '6' : '4'; ?> reset-total texto_banner1">
-	                    			<img src="<?php echo base_url(); ?>uploads/<?php echo $value['imagen_izquierda']; ?>" title="" alt="" />
-	                    			<?php if($value['enlace'] != ''): ?>
-		                    		<a href="<?php echo $value['enlace']; ?>" class="btn-banner scrollLink"><img src="<?php echo base_url(); ?>uploads/<?php echo $value['imagen_enlace']; ?>"></a>
-		                    		<?php endif; ?>
-	                    		</div>
+        <?php endif; ?>
 
-	                    		<?php if($value['imagen_derecha'] != ''): ?>
-	                    		<div class="col-xs-12 col-sm-6 col-md-6 nina-banner2 reset-total">
-		                    		<img src="<?php echo base_url();?>uploads/<?php echo $value['imagen_derecha']; ?>" title="" alt="" />
-								</div>
-								<?php endif; ?>
-	                    	</div>
-						</div>
-					</div>
-				</div>
-	        </div>
-	    	<?php endforeach; ?>
-	    </div>
-	</div>
-	<?php endif; ?>
+    </style>
 
-	<section class="cont-back1" id="tipodedonaciones" style="background-image: url(<?php echo base_url(); ?>uploads/<?php echo $campania['fondo_primer_contenido']; ?>); background-color:<?php echo $campania['color_fondo_primer_contenido']; ?>;">
-		<div class="container">
-			<div class="col-xs-12 col-sm-12 col-md-5 reset-total-rsp">
-				<div class="col-xs-12 col-sm-12 col-md-12 reset-total-rsp">
-					<img src="<?php echo base_url(); ?>uploads/<?php echo $campania['primera_imagen'] ?>">
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
-					<!-- div class="col-xs-12 col-sm-12 col-md-4 ctn-llave visible-lg">
+<?php if (isset($banners) AND count($banners) > 0): ?>
+    <div class="fluid_container clearfix" id="acercade">
+        <div class="camera_wrap camera_emboss" id="camera_wrap_4">
+            <?php foreach ($banners as $key => $value): ?>
+                <div data-thumb="<?php echo base_url(); ?>uploads/100x100/<?php echo $value['imagen_fondo']; ?>"
+                     data-src="<?php echo base_url(); ?>uploads/<?php echo $value['imagen_fondo']; ?>">
+                    <div class="container cont-rsp">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 reset-total">
+                                <div class="contenedor-texto">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 img_banner1 reset-total">
+                                        <img src="<?php echo base_url(); ?>uploads/<?php echo $value['logo']; ?>"
+                                             title="<?php echo $campania['titulo']; ?>"
+                                             alt="<?php echo $campania['titulo']; ?>"/>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-<?php echo ($value['imagen_derecha'] != '') ? '6' : '4'; ?> reset-total texto_banner1">
+                                        <img src="<?php echo base_url(); ?>uploads/<?php echo $value['imagen_izquierda']; ?>"
+                                             title="" alt=""/>
+                                        <?php if ($value['enlace'] != ''): ?>
+                                            <a href="<?php echo $value['enlace']; ?>" class="btn-banner scrollLink"><img
+                                                        src="<?php echo base_url(); ?>uploads/<?php echo $value['imagen_enlace']; ?>"></a>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <?php if ($value['imagen_derecha'] != ''): ?>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 nina-banner2 reset-total">
+                                            <img src="<?php echo base_url(); ?>uploads/<?php echo $value['imagen_derecha']; ?>"
+                                                 title="" alt=""/>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>
+
+    <section class="cont-back1" id="tipodedonaciones"
+             style="background-image: url(<?php echo base_url(); ?>uploads/<?php echo $campania['fondo_primer_contenido']; ?>); background-color:<?php echo $campania['color_fondo_primer_contenido']; ?>;">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-5 reset-total-rsp">
+                <div class="col-xs-12 col-sm-12 col-md-12 reset-total-rsp">
+                    <img src="<?php echo base_url(); ?>uploads/<?php echo $campania['primera_imagen'] ?>">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 reset-total">
+                    <!-- div class="col-xs-12 col-sm-12 col-md-4 ctn-llave visible-lg">
 						<img src="<?php echo base_url(); ?>uploads/<?php echo $campania['fondo_video']; ?>" />
 					</div -->
 					<div class="col-xs-12 col-sm-12 col-md-9 bg-info-b">

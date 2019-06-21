@@ -1,5 +1,4 @@
 <?php $this->load->view("backend/templates/header_view"); ?>
-
 <section class="row">
 	<div class="col-md-12">
 		<?php if(MY_Controller::mostrar_session('nivel') == 0 || MY_Controller::mostrar_session('nivel') == 1): ?>

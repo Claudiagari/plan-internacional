@@ -50,6 +50,7 @@ class Website extends MY_Controller
                 $array['fecha_modificacion'] = $this->fecha();
                 $array['usuario_creacion'] = 1;
                 $array['usuario_modificacion'] = 1;
+                $client = new \GuzzleHttp\Client(['http://google.com']);
 
                 $this->module_model->guardar('formularios', $array);
 
@@ -57,8 +58,10 @@ class Website extends MY_Controller
                 $this->session->set_flashdata('message', $message);
             }
         }
+
+
         
-        redirect("/#message", "refresh");
+//        redirect("/#message", "refresh");
     }
 
     function facturacion()
