@@ -810,11 +810,18 @@ hr.style3{
 
 }
 
-.bg-formulario input{
+.bg-formulario input, .bg-formulario h5{
     font-family: "Veneer", Arial, Tahoma, sans-serif;    
     font-size: 18px;
     color: #33A255;
     height: 40px;
+}
+.bg-formulario h5 {
+    display: flex;
+    align-items: center; 
+}
+.reset-total.genero {
+    padding-top: 15px!important;
 }
 .cont-camp{
     /*margin: 25px 0;*/

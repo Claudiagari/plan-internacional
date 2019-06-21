@@ -193,135 +193,42 @@
 			<div class="container">
 				<div class="col-xs-12 col-sm-12 col-md-12 cont-rsp-padd">
 					<div class="col-xs-12 col-sm-12 col-md-10 ctn-formulario">
-						<div class="col-md-6 reset-total cont-form-une">
-							<h3><?php echo $campania['unete']; ?></h3>
-							<span><?php echo $campania['subtitulo_unete']; ?></span>
-						</div>
 						<div class="col-md-6 reset-total cont-form-don">
 							<h3><?php echo $campania['dona']; ?></h3>
 							<span style="font-size: 18px;"><?php echo $campania['subtitulo_dona']; ?>
 							</span>
 						</div>
-
 						<div class="clearfix"></div>
 
-						<ul class="nav nav-tabs">
-							<li class="active"><a data-toggle="tab" href="#unete" class="unete"><?php echo $campania['unete']; ?></a></li>
-							<li><a data-toggle="tab" onclick="javascript:configurar_descripcion('<?php echo $campania['primer_tipo_donacion']; ?>');" href="#section_precios_tipo_uno" class="dona-btn"><?php echo $campania['primer_tipo_donacion']; ?></a></li>
-							<li><a data-toggle="tab" onclick="javascript:configurar_descripcion('<?php echo $campania['segundo_tipo_donacion']; ?>');" href="#section_precios_tipo_dos" class="dona-btn"><?php echo $campania['segundo_tipo_donacion']; ?></a></li>
-						</ul>
+						
 
 						<div class="tab-content bg-formulario">
-							<div id="unete" class="tab-pane fade in active">
-								<form method="POST" action="<?php echo base_url(); ?>unete">
-									<div class="personal-info col-md-6">
-										<div class="row">
-							        		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group reset-total">
-							        			<label>*</label>
-							                    <input type="text" class="form-control validate[required, custom[onlyLetterSp]]" placeholder="Nombres" id="nombres" name="nombres" />
-							                </div>
-							                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group reset-total">
-							                	<label>*</label>
-							                    <input type="text" class="form-control validate[required, custom[onlyLetterSp]]" placeholder="Apellido Paterno" id="apellido-parterno" name="apellido_paterno" />
-							                </div>
-							                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group reset-total">
-							                	<label>*</label>
-							                    <input type="text" class="form-control validate[required, custom[onlyLetterSp]]" placeholder="Apellido Materno" id="apellido-materno" name="apellido_materno" />
-							                </div>
-							                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group reset-total">
-							                	<label>*</label>
-							                    <input type="text" class="form-control validate[required, custom[email]]" placeholder="Email" id="email" name="email" />
-							                </div>
-							                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group reset-total">
-							                    <input type="text" class="form-control validate[required, custom[phone]]" placeholder="Celular" id="celular" name="celular" />
-							                </div>
-						                	<hr class="hr-1">
-							                <div class="block">
-							                </div>
-										</div>
-					                </div>
-					                <div class="col-xs-12 col-sm-12 col-md-6 ctn-doc">
-					                	<div class="col-md-12 reset-total">
-					                		<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
-					                			<p>Documento</p>
-						                	</div>
-						                	<div class="col-xs-8 col-sm-8 col-md-8 reset-total">
-							                	<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
-								                	<label class="container-check">
-									                	DNI
-									                	<input type="radio" class="validate[required]" id="dni" value="1" name="tipo_documento" onclick="javascript:validar_documento(this);" />
-														<span class="checkmark"></span>
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
-								                	<label class="container-check">
-									                	CE
-									                	<input type="radio" class="validate[required]" id="ce" value="2" name="tipo_documento" onclick="javascript:validar_documento(this);">
-														<span class="checkmark"></span>
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
-								                	<label class="container-check">
-									                	Otro
-									                	<input type="radio" class="validate[required]" id="otro" value="3" name="tipo_documento" onclick="javascript:validar_documento(this);">
-														<span class="checkmark"></span>
-													</label>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-xs-12 col-sm-12 col-md-12 reset-total otro hidden">
-								            <div class="form-group">
-								                <input type="text" id="otro_tipo_documento" class="form-control" name="otro_tipo_documento" placeholder="Especifique el tipo de documento" />
-								            </div>										
-									    </div>
-
-										<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
-								            <div class="form-group">
-								                <input type="text" class="form-control validate[required, custom[number]]" name="numero_documento" placeholder="Número de documento">
-								            </div>										
-									    </div>
-									    <div class="col-xs-12 col-sm-12 col-md-12 reset-total">
-											<div class="cont-select" style="overflow:visible;">
-								                <select name="pais" class="validate[required]" id="pais">
-								                	<option value="" disabled="disabled" selected="selected">País</option>
-								                	<?php foreach($paises as $k => $v): ?>
-								                    	<option value="<?php echo $v['id']; ?>"><?php echo $v['titulo']; ?></option>
-								                	<?php endforeach; ?>
-								                </select>
-								            </div>
-								        </div>
-					                </div>
-					                <div class="clearfix"></div>
-					                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 form-group cont-camp reset-total">
-					                    <hr class="hr-2">
-					                    <div class="col-xs-6 col-sm-6 col-md-4 camp-obli reset-total">
-					                    	<button type="submit" class="btn-primary">Unirme</button>
-					                    	<p>*Campos obligatorios</p>
-					                    </div>
-					                    <div class="col-xs-6 col-sm-6 col-md-8 term-cond">
-					                    	<label class="container-check">
-							                	Acepto los
-							                	<input type="checkbox" class="validate[required]" name="terminos" value="1" id="terminos" />
-												<span class="checkmark"></span>
-											</label>
-											<a href="<?php echo base_url(); ?>uploads/TérminosyCondiciones_Plan.pdf" target="_blank">Términos y Condiciones</a>
-							            </div>
-					                </div>
-					            </form>
-							</div>
-
-							<?php $tipos = array(1 => 'precios_tipo_uno', 2 => 'precios_tipo_dos'); $descripciones = array(1 => 'primer_tipo_donacion' , 2 => 'segundo_tipo_donacion'); ?>
-
-							<?php foreach($tipos as $key => $value): ?>
-							<div id="section_<?php echo $value; ?>" class="tab-pane fade">
-								<form method="POST" action="<?php echo base_url(); ?>checkout">
-									<input type="hidden" name="tipo_pago" id="tipo_pago_<?php echo $key; ?>" value="<?php echo $key; ?>" />
-									<input type="hidden" name="descripcion" id="descripcion_<?php echo $key; ?>" value="<?php echo $descripciones[$key]; ?>" />
-									<input type="hidden" name="cantidad_apoyo" id="cantidad_apoyo_<?php echo $key; ?>" />
+							<div id="unete" class="tab-pane fade in active ">
+							<form method="POST" action="<?php echo base_url(); ?>checkout">
+									<input type="hidden" name="tipo_pago" id="" value="" />
+									<input type="hidden" name="descripcion" id="" value="" />
+									<input type="hidden" name="cantidad_apoyo" id="" />
 									<input type="hidden" name="token" class="token" />
 									<div class="col-md-4 ctn-doc">
-					                	<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
+									<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
+									<h5>Tipo de donación :</h5>
+											<div class="col-xs-6 col-sm-6 col-md-6">
+												<label class="container-check">
+								                	Única
+								                	<input type="radio" name="tipo_donacion" id="" onclick="" value="" checked="checked" />
+													<span class="checkmark"></span>
+												</label>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6">
+							                	<label class="container-check">
+								                	Mensual
+								                	<input type="radio" name="" id="" onclick="" value="" />
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
+										<h5>Tipo de moneda:</h5>
 						                	<div class="col-xs-6 col-sm-6 col-md-6">
 							                	<label class="container-check">
 								                	Soles
@@ -340,10 +247,10 @@
 										<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
 											<div class="cont-select">
 								                <select name="monto_total" class="validate[required]" onchange="javascript:validar_otro_monto(this, <?php echo $key; ?>);" id="monto_total_<?php echo $key; ?>">
-								                	<option value="" disabled="disabled" selected="selected">Selecciona un monto</option>
-								                	<?php foreach($$value as $k => $v): ?>
-								                    <option data-apoyo="<?php echo $v['cantidad_apoyo']; ?>" value="<?php echo $v['precio']; ?>" class="color-2"><?php echo $v['precio']; ?></option>
-								                	<?php endforeach; ?>
+								                	<option value="" disabled="disabled" selected="selected">Monto a donar</option>
+													<option data-apoyo="" value="" class="color-2">30.00</option>
+								                    <option data-apoyo="" value="" class="color-2">50.00</option>
+													<option data-apoyo="" value="" class="color-2">100.00</option>
 								                	<option value="1" data-apoyo="0" class="color-2">Otro Monto</option>
 								                </select>
 								            </div>
@@ -382,7 +289,7 @@
 						                    <input type="text" class="form-control validate[required, custom[email]]" placeholder="Email" id="email_<?php echo $key; ?>" name="email" />
 						                </div>
 						                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group reset-total">
-						                    <input type="text" class="form-control validate[required, custom[phone]]" placeholder="Celular" id="celular_<?php echo $key; ?>" name="celular" />
+						                    <input type="text" class="form-control validate[required, custom[phone]]" placeholder="Celular/Teléfono" id="celular_<?php echo $key; ?>" name="celular" />
 						                </div>
 						                <hr class="hr-1">
 					                </div>
@@ -416,28 +323,60 @@
 												</div>
 											</div>
 										</div>
-
-										<div class="col-xs-12 col-sm-12 col-md-12 reset-total otro hidden">
-								            <div class="form-group">
-								                <input type="text" id="otro_tipo_documento_<?php echo $key; ?>" class="form-control" name="otro_tipo_documento" placeholder="Especifique el tipo de documento" />
-								            </div>										
-									    </div>
-
 										<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
 								            <div class="form-group">
 								                <input type="text" class="form-control validate[required, custom[number]]" name="numero_documento" id="numero_documento_<?php echo $key; ?>" placeholder="Número de documento">
 								            </div>										
 									    </div>
-									    <div class="col-xs-12 col-sm-12 col-md-12 reset-total">
-											<div class="cont-select" style="overflow:visible;">
-								                <select name="pais" class="validate[required]" id="pais_<?php echo $key; ?>">
-								                	<option value="" disabled="disabled" selected="selected">País</option>
-								                	<?php foreach($paises as $k => $v): ?>
-								                    	<option value="<?php echo $v['id']; ?>"><?php echo $v['titulo']; ?></option>
-								                	<?php endforeach; ?>
-								                </select>
-								            </div>							            
-								        </div>
+										<div class="col-xs-12 col-sm-12 col-md-12 reset-total genero">
+					                		<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
+					                			<p>Género</p>
+						                	</div>
+						                	<div class="col-xs-8 col-sm-8 col-md-8 reset-total">
+							                	<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
+								                	<label class="container-check">
+									                	M
+									                	<input type="radio" class="" onclick="" name="" id="" value="1" />
+														<span class="checkmark"></span>
+													</label>
+												</div>
+												<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
+								                	<label class="container-check">
+									                	F
+									                	<input type="radio" class="" onclick="" name="" id="" value="2" />
+														<span class="checkmark"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
+											<div class="form-group">
+											<h5>Fecha de nacimiento</h5>
+											<input type="date" name="cumpleanios"  value="">
+								            </div>										
+									    </div>
+										<div class="col-xs-12 col-sm-12 col-md-12 reset-total genero">
+					                		<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
+					                			<p>Para nosotros la niñez es muy importante, es por eso que nos gustaría saber si tienes hijos</p>
+						                	</div>
+						                	<div class="col-xs-12 col-sm-12 col-md-12 reset-total">
+							                	<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
+								                	<label class="container-check">
+									                	Si
+									                	<input type="radio" class="" onclick="" name="" id="" value="1" />
+														<span class="checkmark"></span>
+													</label>
+												</div>
+												<div class="col-xs-4 col-sm-4 col-md-4 reset-total">
+								                	<label class="container-check">
+									                	No
+									                	<input type="radio" class="" onclick="" name="" id="" value="2" />
+														<span class="checkmark"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+									   
 					                </div>
 					                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 form-group cont-camp reset-total">
 					                    <hr class="hr-2">
@@ -456,7 +395,8 @@
 					                </div>
 			            		</form>
 							</div>
-							<?php endforeach; ?>
+
+							
 						</div>
 
 						<?php if($message['type'] == 'success'): ?>
@@ -488,7 +428,7 @@
 						</div>
 						<div class="cont-slider-range">
 							<div id="slider-range">
-								<span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default left"></span>
+								<span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default left" ></span>
 							</div>
 						</div>
 						<?php $rangos = array('uno', 'dos', 'tres', 'cuatro', 'cinco'); ?>

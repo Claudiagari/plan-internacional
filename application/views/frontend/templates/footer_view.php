@@ -92,8 +92,9 @@
 			    range: true,
 			    min: 0,
 			    max: 5,
-			    values: [0, <?php echo $campania['meta']; ?>],
+			    value: 1,
 			    slide: function(event, ui) {
+					debugger
 			      $("#amount_min").val(ui.values[0]);
 			      $("#amount_max").val(ui.values[1]);
 			    }
